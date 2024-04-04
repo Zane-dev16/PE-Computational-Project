@@ -2,10 +2,10 @@ n <- 23
 seed <- 1950
 r <- 300
 m <- 170
+proportions <- numeric(n)
 
 set.seed(1950)
 
-proportions <- numeric(23)
 for (i in 1:r) {
   num_lower <- 0
   for (j in 1:m) {
@@ -17,5 +17,6 @@ for (i in 1:r) {
   proportions[i] <- num_lower / m
 }
 
-mean(proportions)
-pt(1.5, df=n)
+result = abs(mean(proportions) - pt(1.5, df=n))
+result_percentage = round(result * 100, 5)
+result_percentage
