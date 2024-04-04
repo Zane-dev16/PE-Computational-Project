@@ -4,7 +4,7 @@ r <- 300
 m <- 170
 proportions <- numeric(n)
 
-set.seed(1950)
+set.seed(seed)
 
 for (i in 1:r) {
   num_lower <- 0
