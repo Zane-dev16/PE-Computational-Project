@@ -13,6 +13,14 @@ nLL <- function(theta) {
   else NA
 }
 fit <- mle(nLL, start = list(theta = 3.6))
-fit
+theta <- coef(fit)[1]
 
-(x**-theta) * a**theta
+# integral: -(a**theta)x**(-theta) + (a**theta)4**(-theta) = 0.75
+# <=> (a**theta)x**(-theta) = 0.25
+# <=> x**(-theta) = 0.25 * (a**-theta)
+# <=> x = (4**1/theta) * a
+
+quantil_est =  (4**(1/theta)) * a
+quantil_real = (4**(1/start_value)) * a
+
+abs(quantil_est - quantil_real)
