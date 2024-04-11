@@ -10,3 +10,8 @@ observations
 
 sample_var <- var(observations)
 sample_var
+
+a <- qchisq((1-gamma)/2, n-2)
+b <- qchisq((1+gamma)/2, n-2)
+a
+b
