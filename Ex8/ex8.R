@@ -41,8 +41,10 @@ ic_new_lower_bound <- (n-1)*sample_var/d
 ic_new_upper_bound <- (n-1)*sample_var/c
 
 ic_new <- c(ic_new_lower_bound, ic_new_upper_bound)
+ic_new
 amplitude_ic <- ic[2] - ic[1]
 amplitude_ic_new <- ic_new[2] - ic_new[1]
+c(amplitude_ic, amplitude_ic_new)
 
 amplitude_diff <- abs(amplitude_ic - amplitude_ic_new)
 amplitude_diff
