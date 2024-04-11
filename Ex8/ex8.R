@@ -15,3 +15,9 @@ a <- qchisq((1-gamma)/2, n-2)
 b <- qchisq((1+gamma)/2, n-2)
 a
 b
+
+ic_lower_bound <- (n-1)*sample_var/a
+ic_upper_bound <- (n-1)*sample_var/b
+
+ic <- c(ic_lower_bound, ic_upper_bound)
+ic
