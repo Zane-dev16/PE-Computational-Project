@@ -5,5 +5,8 @@ gamma <- 0.95
 
 set.seed(seed)
 
-observations <- sample(distances, 8)
+observations <- sample(distances, n)
 observations
+
+sample_var <- var(observations)
+sample_var
