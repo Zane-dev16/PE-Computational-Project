@@ -18,8 +18,8 @@ b <- qchisq((1+gamma)/2, n-1)
 a
 b
 
-ic_lower_bound <- (n-1)*sample_var/a
-ic_upper_bound <- (n-1)*sample_var/b
+ic_lower_bound <- (n-1)*sample_var/b
+ic_upper_bound <- (n-1)*sample_var/a
 
 ic <- c(ic_lower_bound, ic_upper_bound)
 ic
@@ -33,5 +33,16 @@ equations <- function(x) {
   return(c(eq1, eq2))
 }
 
-c_d = fsolve(f=equations, x0=c(a,b))$x
-c_d
+c_d <- fsolve(f=equations, x0=c(a,b))$x
+c <- c_d[1]
+d <- c_d[2]
+
+ic_new_lower_bound <- (n-1)*sample_var/d
+ic_new_upper_bound <- (n-1)*sample_var/c
+
+ic_new <- c(ic_new_lower_bound, ic_new_upper_bound)
+amplitude_ic <- ic[2] - ic[1]
+amplitude_ic_new <- ic_new[2] - ic_new[1]
+
+amplitude_diff <- abs(amplitude_ic - amplitude_ic_new)
+amplitude_diff
