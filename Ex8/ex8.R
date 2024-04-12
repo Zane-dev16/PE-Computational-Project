@@ -18,8 +18,8 @@ b <- qchisq((1+gamma)/2, n-1)
 a
 b
 
-ic_lower_bound <- (n-1)*sample_var/b
-ic_upper_bound <- (n-1)*sample_var/a
+ic_lower_bound <- ((n-1)*sample_var)/b
+ic_upper_bound <- ((n-1)*sample_var)/a
 
 ic <- c(ic_lower_bound, ic_upper_bound)
 ic
@@ -46,5 +46,5 @@ amplitude_ic <- ic[2] - ic[1]
 amplitude_ic_new <- ic_new[2] - ic_new[1]
 c(amplitude_ic, amplitude_ic_new)
 
-amplitude_diff <- abs(amplitude_ic - amplitude_ic_new)
+amplitude_diff <- round(abs(amplitude_ic - amplitude_ic_new), 3)
 amplitude_diff
