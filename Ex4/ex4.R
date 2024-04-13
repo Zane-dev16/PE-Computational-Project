@@ -6,28 +6,18 @@ alarm_sig <- 2
 shutdown_sig <- 1
 
 set.seed(seed)
+no_shutdown_count <- 0
 no_shutdown_alarm_count <- 0
 for (i in 1:n) {
-  alarm <- FALSE
-  shutdown <- FALSE
-  for (j in 1:10) {
-    p_gen <- sample(55, 1)
-    for (signal in 1:10) {
-      p_gen <- p_gen - signal
-      if (p_gen <= 0) {
-        break
-      }
-    }
-    if (signal == alarm_sig) {
-      alarm <- TRUE
-    }
-    if (signal == shutdown_sig) {
-      shutdown <- TRUE
-    }
-  }
+  signals = sample(1:10, 9, replace = TRUE, prob = p)
+  alarm <- any(signals == 2)
+  shutdown <- any(signals == 1)
   if (alarm & !shutdown) {
     no_shutdown_alarm_count <- no_shutdown_alarm_count + 1
   }
+  if (!shutdown) {
+    no_shutdown_count <- no_shutdown_count + 1
+  }
 }
-no_shutdown_alarm_count / n
-
+proportion <- no_shutdown_alarm_count / no_shutdown_count
+proportion
