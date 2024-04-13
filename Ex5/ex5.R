@@ -18,5 +18,6 @@ for (i in 1:r) {
 }
 
 result = abs(mean(proportions) - pt(1.5, df=n))
-result_percentage = round(result * 100, 5)
+result_percentage = result * 100
 result_percentage
+round(result_percentage, 5)
