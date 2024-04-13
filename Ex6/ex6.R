@@ -20,5 +20,6 @@ exact <- 1 - pgamma(90, 30, rate=1/4)
 
 diff <- abs(proportion - exact)
 diff
-result_percentage <- round(diff * 100, 4)
+result_percentage <- diff * 100
 result_percentage
+round(result_percentage, 4)
