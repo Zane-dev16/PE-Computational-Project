@@ -46,5 +46,6 @@ amplitude_ic <- ic[2] - ic[1]
 amplitude_ic_new <- ic_new[2] - ic_new[1]
 c(amplitude_ic, amplitude_ic_new)
 
-amplitude_diff <- round(abs(amplitude_ic - amplitude_ic_new), 3)
+amplitude_diff <- abs(amplitude_ic - amplitude_ic_new)
 amplitude_diff
+round(amplitude_diff, 3)

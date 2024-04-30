@@ -40,3 +40,9 @@ expected_distrib <- expected_distrib
 expected_freqs <- expected_distrib * 180
 expected_freqs
 obs_freqs
+
+chisq_stat <- sum((obs_freqs - expected_freqs)**2/ expected_freqs)
+chisq_stat
+
+pval <- 1 - pchisq(chisq_stat, df=7)
+pval
