@@ -24,3 +24,4 @@ quantil_est =  (4**(1/theta)) * a
 quantil_real = (4**(1/start_value)) * a
 
 abs(quantil_est - quantil_real)
+
