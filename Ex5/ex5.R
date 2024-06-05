@@ -9,7 +9,7 @@ set.seed(seed)
 for (i in 1:r) {
   num_lower <- 0
   for (j in 1:m) {
-    T = sqrt(n) * rnorm(1) / sqrt(sum(rnorm(n - 1)^2))
+    T = sqrt(n) * rnorm(1) / sqrt(sum(rnorm(n)^2))
     if (T <= 1.5) {
       num_lower = num_lower + 1
     }
